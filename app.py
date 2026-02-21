@@ -12,16 +12,29 @@ def get_weather():
         print(f"❌ Error: {e}")
 
 def main():
+    # Open file to write output
+    with open('output.txt', 'w') as f:
+        f.write("=" * 50 + "\n")
+        f.write("🐍 Python App Started successfully\n")
+        f.write(f"⏰ Time: {datetime.now()}\n")
+        f.write("=" * 50 + "\n\n")
+        
+        # This uses the 'requests' library (a dependency)
+        data = get_weather()
+        f.write(f"API Data: {data}\n")
+        
+        f.write("\n✅ App completed successfully!\n")
+        f.write("=" * 50 + "\n")
+    
+    # Also print to console
     print("=" * 50)
-    print("🐍 Python App Started sucessfully")
+    print("🐍 Python App Started successfully")
     print(f"⏰ Time: {datetime.now()}")
     print("=" * 50)
-    
-    # This uses the 'requests' library (a dependency)
-    data = get_weather()
-    
+    print(f"✅ API Response: 200")
     print("\n✅ App completed successfully!")
     print("=" * 50)
+    print("\n📁 Output saved to output.txt")
 
 if __name__ == "__main__":
     main()
