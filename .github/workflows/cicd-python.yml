@@ -1,1 +1,34 @@
+name: python-cicd
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      
+      - name: copy the code
+        uses: actions/checkout@v6
+
+      - name: pyhton env  
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+      - name: cache
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            pip-
+
+      - name: dependices
+        run: pip install -r requirement.txt
+
+      - name: application
+        run: python app.py
