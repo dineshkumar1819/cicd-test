@@ -13,7 +13,7 @@ def get_weather():
 
 def main():
     print("=" * 50)
-    print("🐍 Python App Started")
+    print("🐍 Python App Started sucessfully")
     print(f"⏰ Time: {datetime.now()}")
     print("=" * 50)
     
