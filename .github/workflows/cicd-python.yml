@@ -53,5 +53,5 @@ jobs:
 
       - name: output
         run: |
-         ls
+         ls -l
          cat ./downloaded/output.txt
