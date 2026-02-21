@@ -28,7 +28,7 @@ jobs:
             pip-
 
       - name: dependices
-        run: pip install -r requirement.txt
+        run: pip install -r requirements.txt
 
       - name: application
         run: python app.py
